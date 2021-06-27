@@ -4,7 +4,7 @@ let hiddenWord;
 export default function Guess(props) {
   const [pastGuess, setPastGuess] = useState([]);
   hiddenWord = props.word;
-  const [hidden, setHidden] = useState(hiddenWord);
+  const [hidden, setHidden] = useState(props.word);
 
   function guessFunc() {
     guessVar = document.getElementById("guess").value;
@@ -18,7 +18,7 @@ export default function Guess(props) {
     for (let i2 = 0; i2 < props.secret.length; i2++) {
       if (props.secret[i2] === guessVar) {
         hiddenWord[i2] = guessVar;
-        setHidden(hiddenWord);
+        setHidden(hiddenWord + "");
         console.log(true + hidden);
         // console.log(true + " secretLetter: " + props.secret[i2]);
       } else {

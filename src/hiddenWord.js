@@ -10,6 +10,7 @@ export default function Word(props) {
     wordVar = document.getElementById("hiddenWord").value;
     setSecretWord(wordVar.toUpperCase());
     makeHidden();
+    console.log(hiddenWord);
   }
   function makeHidden() {
     for (let i = 0; i < wordVar.length; i++) {
