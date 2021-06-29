@@ -1,12 +1,14 @@
 import { useState } from "react";
 import Guess from "./guess.js";
-import Man from "./man.js";
-let wordVar = " ";
+
 let hiddenWord = [];
+
 export default function Word(props) {
   const [secretWord, setSecretWord] = useState(" ");
+  let wordVar = " ";
 
   function getInputValue() {
+    //Gets the user's secret word
     wordVar = document.getElementById("hiddenWord").value;
     setSecretWord(wordVar.toUpperCase());
     makeHidden();
